@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pay Page | Mario and Luigi's</title>
+        <link href="http://fonts.cdnfonts.com/css/italiana" href="{{ url_for('static', filename='css/styles.css') }}">
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        
+        <script src="{{ url_for('static', filename='JS/store.js') }}" async></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href={{ url_for('homepage') }}>Home page</a></li>
+                    <li><a href={{ url_for('store') }}>Menu</a></li>
+                    <li><a href={{ url_for('about') }}>About us</a></li>
+                </ul>
+            </nav>
+            <h1 class="Restaurant-name Restaurant-name-large">Mario and Luigi's</h1>
+        </header>
+
+
+        <section class="container content-section">
+            
+            <div class="pay-box">
+                <h2 class="section-header">How will you pay?</h2>
+                <span class="cart-price cart-header cart-column">Total:</span>
+                <span class="cart-total-price cart-column">{{ customerPay }}<br></span> 
+                <!-- here instead of MONEY should stay the given number from the cart -->
+                <form>
+                    <input type="radio" id="ideal" name="payway" />
+                    <label for="ideal" class="cart-header">Ideal<br></label>
+
+                    <input type="radio" id="paypal" name="payway" />
+                    <label for="paypal" class="cart-header">Paypal<br></label>
+
+                    <input type="radio" id="revolut" name="payway" />
+                    <label for="revolut" class="cart-header">Revolut<br></label>
+                    
+                    <input type="radio" id="cash" name="payway" />
+                    <label for="cash" class="cart-header">Cash<br></label>
+                </form>
+            </div>
+                    
+        <section class="container content-section">
+            <form action={{ url_for('tracker') }} method = "POST">
+                <p><input class="btn btn-primary btn-purchase" type="submit" value = "PURCHASE"/></p>
+            </form>
+        </section>
+
+        <footer>
+            <header class="main-header">
+                <nav class="main-nav nav">
+                    <ul>
+                        <li><a href={{ url_for('homepage') }}>Home page</a></li>
+                        <li><a href={{ url_for('store') }}>Menu</a></li>
+                        <li><a href={{ url_for('about') }}>About us</a></li>
+                    </ul>
+                </nav>
+                <h1 class="Restaurant-name Restaurant-name-large">Mario and Luigi's</h1>
+                
+            </header>
+        </footer>
+    </body>
+</html>

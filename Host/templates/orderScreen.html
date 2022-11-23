@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="1" >
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active orders </title>
+</head>
+<body>
+    <h1>Active orders </h1>
+            {% if allOrders > 0 %}
+                {% for p in range(0, allOrders) %}
+                <div class="order-box">
+                <p class="orderTitle">Order {{ orderID }} </p>
+                    {% for i in range(0, orderLength) %}
+                        <p class="allignText">{{ quant[p][i] }}  {{ pizzaList[p][i] }}</p>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            {% else %}
+            <p>currently no orders</p>
+            {% endif %}
+
+
+    </table>
+
+  </tr>
+</table>
+
+</body>
+</html>

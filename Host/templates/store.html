@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mario and Luigi's | Menu</title>
+        <link href="http://fonts.cdnfonts.com/css/italiana" href="{{ url_for('static', filename='css/styles.css') }}">
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        
+        <script src="{{ url_for('static', filename='JS/store.js') }}" async></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href={{ url_for('homepage') }}>Home page</a></li>
+                    <li><a href={{ url_for('store') }}>Menu</a></li>
+                    <li><a href={{ url_for('about') }}>About us</a></li>
+                </ul>
+            </nav>
+            <h1 class="Restaurant-name Restaurant-name-large">Mario and Luigi's</h1>
+        </header>
+        <section class="container content-section">
+            <h2 class="section-header">Popular Pizzas</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Margherita</span>
+                    <img class="shop-item-image" src="{{ pizzaMagherita }}">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$12.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Pepperoni</span>
+                    <img class="shop-item-image" src="{{ pizzaPepperoni }}">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$14.99</span>
+                        <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Prosciutto E Funghi</span>
+                    <img class="shop-item-image" src="{{ pizzaProsciutto }}">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$15.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Quattro Stagioni</span>
+                    <img class="shop-item-image" src="{{ pizzaQuattros }}">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$17.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container content-section">
+            <h2 class="section-header">Hot Deals</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Star Carlos</span>
+                    <img class="shop-item-image" src="{{ pizzaStarCarlos }}">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$13.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Nino Bellisimo</span>
+                    <img class="shop-item-image" src="{{ PizzaNinoBel }}">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$15.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Marinara </span>
+                    <img class="shop-item-image" src="{{ pizzaMarinara }}">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$10.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container content-section">
+            <h2 class="section-header">Luigi's Specials</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Luigi's Burger Pizza</span>
+                    <img class="shop-item-image" src="{{ pizzaBurger }}">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$19.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Luigi's Exotic Pizza</span>
+                    <img class="shop-item-image" src="{{ pizzaExotic }}">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$6.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+            
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+               
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <form action={{ url_for('payment') }} method = "POST">
+                <p><input onclick='myFunction();' class="btn btn-primary btn-purchase" type = "submit" value = "PURCHASE" /></p>
+            </form>
+        </section>
+        <footer>
+            <header class="main-header">
+                <nav class="main-nav nav">
+                    <ul>
+                        <li><a href={{ url_for('homepage') }}>Home page</a></li>
+                        <li><a href={{ url_for('store') }}>Menu</a></li>
+                        <li><a href={{ url_for('about') }}>About us</a></li>
+                    </ul>
+                </nav>
+                <h1 class="Restaurant-name Restaurant-name-large">Mario and Luigi's</h1>
+                
+            </header>
+        </footer>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+        <script>
+            function myFunction() {
+                
+
+                let pizzas = [];
+                let quantityPizzas = [];
+
+                const price = document.getElementsByClassName('cart-total-price')[0].innerText;
+
+                for (let i = 0; i < document.getElementsByClassName('cart-item').length ; i++) {
+                    pizzas.push(document.getElementsByClassName('cart-item')[i].innerText);
+                }
+
+                
+                for (let i = 0; i < document.getElementsByClassName('cart-quantity-input').length ; i++) {
+                    quantityPizzas.push(document.getElementsByClassName('cart-quantity-input')[i].value);
+                }
+                
+                pizzas.shift();
+                
+                console.log(price)
+                console.log(pizzas)
+                console.log(quantityPizzas)
+                const dict_values = {price, pizzas, quantityPizzas}
+
+                const s = JSON.stringify(dict_values);
+
+                console.log(s)
+                $.ajax({
+                    url:"/receiveInfo",
+                    type:"POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(s)});
+                }
+        </script>
+
+    </body>
+</html>

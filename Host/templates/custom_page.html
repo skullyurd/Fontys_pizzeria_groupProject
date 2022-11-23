@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Custom Page</title>
+</head>
+<body>
+    <!-- features for every page -->
+    <div class="fixed-left">
+        
+    </div>
+    <div class="fixed">
+        <img src="{{ logo }}" alt="losho" width="200px%" height="100%" class="center">
+    </div>
+    <!-- these above -->
+    <div class="main-box">
+
+        <h2>Custom your pizza: {{kind_of_pizza}}</h2>
+        <br>
+
+        <label for="pizza-size"><h1>Size:</h1></label>
+        <select name="pizza" id="pizza">
+        <option value="">Select a size</option>
+        <option value="small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Big">Big</option>
+        </select>
+
+        <h1>Add toppings:</h1>
+        <input type="checkbox" id="topping1" name="topping1" value="Mushroom">
+        <label for="topping1">Mushroom<br></label>
+        <input type="checkbox" id="topping2" name="topping2" value="Cheese">
+        <label for="topping2">Cheese<br></label>
+        <input type="checkbox" id="topping3" name="topping3" value="Pepperoni">
+        <label for="topping3">Pepperoni<br></label>
+        <input type="checkbox" id="topping4" name="topping4" value="Spinache">
+        <label for="topping4">Spinache<br></label>
+        <input type="checkbox" id="topping5" name="topping5" value="Tomatoes">
+        <label for="topping5">Tomatoes<br></label>
+        <input type="checkbox" id="topping6" name="topping6" value="Bacon">
+        <label for="topping6">Bacon<br></label>
+        <input type="checkbox" id="topping7" name="topping7" value="Onion">
+        <label for="topping7">Onion<br></label>
+        <input type="checkbox" id="topping8" name="topping8" value="Olives">
+        <label for="topping8">Olives<br></label>
+        <input type="checkbox" id="topping9" name="topping9" value="Paprika">
+        <label for="topping9">Paprika<br></label>
+        <input type="checkbox" id="topping10" name="topping10" value="Peppers">
+        <label for="topping10">Peppers<br></label>
+        <input type="checkbox" id="topping11" name="topping11" value="Chiken">
+        <label for="topping11">Chiken<br></label>
+        <input type="checkbox" id="topping12" name="topping12" value="Beef">
+        <label for="topping12">Beef<br></label>
+        
+        <h1>You have allergies, so remove:</h1>
+        <input type="checkbox" id="remove1" name="remove1" value="Cheese">
+        <label for="remove1">Cheese<br></label>
+        <input type="checkbox" id="remove2" name="remove2" value="Peppers">
+        <label for="remove2">Peppers<br></label>
+        <input type="checkbox" id="remove3" name="remove3" value="Onions">
+        <label for="remove3">Onions<br></label>
+        <input type="checkbox" id="remove4" name="remove4" value="Pork">
+        <label for="remove4">Pork<br></label>
+
+        <p>
+        <a href={{ url_for('store') }}><button><h2>Back to menu</h2></button></a>
+        <a href={{ url_for('store') }}><button><h2>To the cart</h2></button></a>
+        </p>
+    </div>
+</body>
+</html>

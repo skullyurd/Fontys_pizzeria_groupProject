@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to Mario and Luigi's</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="nav main-nav">
+                <ul>
+                    <li><a href={{ url_for('homepage') }}>Home page</a></li>
+                    <li><a href={{ url_for('store') }}>Menu</a></li>
+                    <li><a href={{ url_for('about') }}>About us</a></li>
+                </ul>
+            </nav>
+            <h1 class="Restaurant-name Restaurant-name-large">Mario and Luigi's</h1>
+            
+         
+        </header>
+        <section class="content-section container">
+            <h2 class="section-header">Information</h2>
+            <div>
+                <div>
+                    <!-- login to continue -->
+                    <form action={{ url_for('homepage') }} method = "POST">
+                        <p>Name: </p>
+                        <p><input type = "text" name = "nm" /></p>
+                        <p>Surname: </p>
+                        <p><input type = "text" name = "sr" /></p>
+                        <p><input class="btn-primary" type = "submit" value = "Submit" /></p>
+                        <p><input class="btn-primary" type="reset" value = "Reset" /></p>
+                    </form>
+                    <!-- SUBMIT BUTTON should send the user to the menu page if only there is a correct session login -->
+                    
+                    <!-- <a href="store.html" type="button" class=" btn-primary " >View Our Menu</button> -->
+                </div>
+
+            </div>
+        </section>
+        
+    </body>
+</html>
